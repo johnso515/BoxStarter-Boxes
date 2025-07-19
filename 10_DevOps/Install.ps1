@@ -73,7 +73,8 @@ Write-Host " Path to Install.ps1 [$((Join-Path $PSScriptRoot ..\0*\Install.ps1))
 Write-Host " Alt Path to Install.ps1 "
 Write-Host " [$((Join-Path $(Get-Location) ..\0*\Install.ps1))]"
 Write-Host " " -ForegroundColor Gray
-& (Join-Path $PSScriptRoot ..\0*\Install.ps1) @PSBoundParameters
+# & (Join-Path $PSScriptRoot ..\0*\Install.ps1) @PSBoundParameters
+& (Join-Path $(Get-Location) ..\0*\Install.ps1) @PSBoundParameters
 
 Write-Host "=== DEVOPS ==="
 
