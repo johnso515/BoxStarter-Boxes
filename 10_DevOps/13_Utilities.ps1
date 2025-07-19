@@ -28,8 +28,8 @@ choco upgrade -y bitwarden
 choco upgrade -y bitwarden-cli
 
 # What version do I need
-choco upgrade -y gitversion.portable
-
+# choco upgrade -y gitversion.portable
+choco install gitversion.portable --version 5.12.0 -y --allow-downgrade --pin
 choco upgrade -y putty.install
 
 choco upgrade -y git.install --package-parameters="'/GitOnlyOnPath /WindowsTerminal /NoShellIntegration /SChannel'"
