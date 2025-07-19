@@ -1,7 +1,11 @@
+
 # If you installed this from the windows store, and then logged in with the same account, it would already be installed...
 if (!(Get-AppxPackage Microsoft.WindowsTerminal -ErrorAction Ignore)) {
     choco upgrade -y microsoft-windows-terminal
 }
+
+Write-Host "Beginning the 13_xx work..." -ForegroundColor Gray
+
 # Delta provides language syntax-highlighting, within-line insertion/deletion detection, and restructured diff output for git on the command line.
 choco upgrade -y delta
 
