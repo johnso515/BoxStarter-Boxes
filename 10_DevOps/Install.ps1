@@ -63,7 +63,9 @@ if ($Boxstarter -and (Convert-Path (Join-Path "$PSScriptRoot\" ..\[015]*\Install
     }
     Set-Location Boxes\10_DevOps
 }
-
+<# Add Debug: #>
+Get-Location
+Write-Host " Path to Install.ps1 [$((Join-Path $PSScriptRoot ..\0*\Install.ps1))]"
 & (Join-Path $PSScriptRoot ..\0*\Install.ps1) @PSBoundParameters
 
 Write-Host "=== DEVOPS ==="
