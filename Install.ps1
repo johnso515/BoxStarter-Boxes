@@ -49,7 +49,7 @@ if ($Boxstarter) {
             $outputStream = ""
             $outputMessage = @()
             $ErrorActionPreference, $oldErrorAction = 'Continue', $ErrorActionPreference
-            $Output = git clone https://github.com/Jaykul/BoxStarter-Boxes.git Boxes 2>&1
+            $Output = git clone https://github.com/johnso515/BoxStarter-Boxes.git Boxes 2>&1
             $ErrorActionPreference = $oldErrorAction
             # This empty error record causes an extra iteration to flush the output
             switch (@($Output) + ([System.Management.Automation.ErrorRecord]::new([Exception]::new(""), "NotAnError", "NotSpecified", $null))) {
