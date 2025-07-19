@@ -16,8 +16,10 @@ param (
 Push-Location
 
 # If this script is being run DIRECTLY via Boxstarter, we need to clone the rest of the repository
-Write-Host "  Boxstarter [$Boxstarter]"
-Write-Host " Start Check [$((Convert-Path (Join-Path "$PSScriptRoot\" ..\[015]*\Install.ps1)))]"
+Write-Host " 0) Boxstarter [$Boxstarter]" -ForegroundColor Blue
+Write-Host " 1) Start Check [$((Convert-Path (Join-Path "$PSScriptRoot\" ..\[015]*\Install.ps1)))]"  -ForegroundColor Blue
+
+
 if ($Boxstarter -and (Convert-Path (Join-Path "$PSScriptRoot\" ..\[015]*\Install.ps1)).Count -lt 3) {
     $tendir = Join-Path ([IO.Path]::GetTempPath()) ([IO.Path]::GetRandomFileName())
     New-Item -Type Directory -Path $tendir | Out-Null
