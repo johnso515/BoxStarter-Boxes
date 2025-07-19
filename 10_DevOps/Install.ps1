@@ -66,6 +66,9 @@ if ($Boxstarter -and (Convert-Path (Join-Path "$PSScriptRoot\" ..\[015]*\Install
 <# Add Debug: #>
 Get-Location
 Write-Host " Path to Install.ps1 [$((Join-Path $PSScriptRoot ..\0*\Install.ps1))]"
+Write-Host " Alt Path to Install.ps1 "
+Write-Host " [$((Join-Path $(Get-Location) ..\0*\Install.ps1))]"
+Write-Host " " -ForegroundColor Gray
 & (Join-Path $PSScriptRoot ..\0*\Install.ps1) @PSBoundParameters
 
 Write-Host "=== DEVOPS ==="
