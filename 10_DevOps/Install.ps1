@@ -79,7 +79,9 @@ Write-Host " " -ForegroundColor Gray
 Write-Host "=== DEVOPS ==="
 
 # I'm giving in to the easy way. This way it's easier to customize by deleting the files you don't want
-foreach ($file in Get-ChildItem $PSScriptRoot -Filter "??_*.ps1") {
+# foreach ($file in Get-ChildItem $PSScriptRoot -Filter "??_*.ps1") {
+<# Assume we are in the correct location #>
+foreach ($file in Get-ChildItem . -Filter "??_*.ps1") {
     Write-Host "=== $($file.Name) ==="
     & $file.FullName
 }
