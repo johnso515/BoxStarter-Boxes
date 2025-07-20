@@ -89,7 +89,7 @@ if ($Boxstarter) {
     Write-Warning "This script is meant to be called from Boxstarter or used from a local copy of my BoxStarter-Boxes repository"
 }
 
-& (Convert-Path "5*\Install.ps1") @PSBoundParameters
+& $((Get-Item (Convert-Path "5*\Install.ps1")).FullName) @PSBoundParameters
 
 Pop-Location
 if ($gitempdir) {
