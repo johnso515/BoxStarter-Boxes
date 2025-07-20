@@ -38,7 +38,7 @@ if ($Boxstarter) {
     RefreshEnv # git isn't shimmed, so we need it's path
 
     # If this script is being run via Boxstarter, we need to clone the rest of the repository
-    if (!$PSScriptRoot -or (Convert-Path [015]*\Install.ps1).Count -lt 3) {
+    if (!$PSScriptRoot -or (Convert-Path "[015]*\Install.ps1").Count -lt 3) {
         $gitempdir = Join-Path ([IO.Path]::GetTempPath()) ([IO.Path]::GetRandomFileName())
         New-Item -Type Directory -Path $gitempdir | Out-Null
         Set-Location $gitempdir
@@ -89,7 +89,7 @@ if ($Boxstarter) {
     Write-Warning "This script is meant to be called from Boxstarter or used from a local copy of my BoxStarter-Boxes repository"
 }
 
-& (Convert-Path 5*\Install.ps1) @PSBoundParameters
+& (Convert-Path "5*\Install.ps1") @PSBoundParameters
 
 Pop-Location
 if ($gitempdir) {
